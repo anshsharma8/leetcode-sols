@@ -1,0 +1,35 @@
+# Number of Subarrays of Size K and Average ≥ Threshold
+
+## Problem
+Given an integer array `arr`, an integer `k`, and an integer `threshold`, return the number of contiguous subarrays of size `k` whose **average is greater than or equal to `threshold`**.
+
+## Key Idea
+Use the **Sliding Window Technique** to efficiently calculate the sum of every subarray of size `k` and check its average.
+
+## Approach (Optimal)
+1. Compute the sum of the first `k` elements.
+2. If `(sum / k) >= threshold`, increment the count.
+3. Slide the window across the array:
+   - Add the next element to the window.
+   - Remove the element leaving the window.
+4. For each new window, check if `(currentSum / k) >= threshold`.
+5. Return the final count.
+
+## Why It Works
+- Sliding window avoids recomputing sums repeatedly.
+- Each element is processed only once.
+- Efficient for large arrays.
+
+## Complexity
+- **Time Complexity:** O(n), where n is the length of the array.
+- **Space Complexity:** O(1), constant extra space.
+
+## Important Note
+- Integer division is sufficient since comparison is done with an integer threshold.
+- Input array is not modified.
+
+## Summary
+This solution efficiently counts valid subarrays of size `k` using the sliding window technique with constant space.
+
+
+
